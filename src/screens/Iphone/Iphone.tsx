@@ -10,6 +10,7 @@ export const Iphone = (): JSX.Element => {
       name: "Chat via Telegram",
       icon: "./tg.svg",
       bgColor: "bg-[#a3e6fc82]",
+      id: "telegram",
       fallbackIcon: MessageCircle,
       fallbackColor: "text-blue-500",
     },
@@ -17,6 +18,7 @@ export const Iphone = (): JSX.Element => {
       name: "Chat via WhatsApp",
       icon: "./wa.svg",
       bgColor: "bg-[#dafde382]",
+      id: "whatsapp",
       fallbackIcon: MessageCircle,
       fallbackColor: "text-green-500",
     },
@@ -24,6 +26,7 @@ export const Iphone = (): JSX.Element => {
       name: "Chat via Viber",
       icon: "./viber.svg",
       bgColor: "bg-[#f0dafd82]",
+      id: "viber",
       fallbackIcon: MessageCircle,
       fallbackColor: "text-purple-500",
     },
@@ -31,6 +34,7 @@ export const Iphone = (): JSX.Element => {
       name: "Visit Instagram",
       icon: "./inst.svg",
       bgColor: "bg-[#fddadb82]",
+      id: "instagram",
       fallbackIcon: Instagram,
       fallbackColor: "text-pink-500",
     },
@@ -38,6 +42,7 @@ export const Iphone = (): JSX.Element => {
       name: "Chat via E-mail",
       icon: "./mail.svg",
       bgColor: "bg-[#ffffff82]",
+      id: "email",
       isEmail: true,
       fallbackIcon: Mail,
       fallbackColor: "text-gray-600",
@@ -134,7 +139,8 @@ export const Iphone = (): JSX.Element => {
             return link ? (
               <a
                 key={index}
-                href={link}
+                id={option.id}
+                href={link} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="self-stretch w-full"
@@ -149,6 +155,7 @@ export const Iphone = (): JSX.Element => {
             ) : (
               <Button
                 key={index}
+                id={option.id}
                 variant="ghost"
                 className={`items-center justify-start px-4 py-3 self-stretch w-full h-auto ${option.bgColor} rounded-[10px] overflow-hidden backdrop-blur-[32px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(32px)_brightness(100%)] flex gap-4 hover:scale-[1.02] transition-all duration-200 shadow-sm hover:shadow-md`}
               >
