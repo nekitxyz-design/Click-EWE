@@ -95,6 +95,8 @@ export const Iphone = (): JSX.Element => {
               link = "mailto:info@easywayeurope.com";
             } else if (option.name === "Visit Instagram") {
               link = "https://www.instagram.com/easywayeurope/";
+            } else if (option.name === "Chat via Telegram") {
+              link = "https://t.me/EWE_Chat";
             }
             const buttonContent = (
               <>
