@@ -1,14 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { Iphone } from "./screens/Iphone";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
-import * as amplitude from '@amplitude/analytics-browser';
-import { Button } from "@mui/material";
-
-// Replace with your Amplitude API key
-amplitude.init('43142b96c98980996dd8ee88fedf3982');
-
-amplitude.identify('info@easywayeurope.com');
-
 createRoot(document.getElementById("app") as HTMLElement).render(
   <>
     <ShaderGradientCanvas
