@@ -2,6 +2,13 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Iphone } from "./screens/Iphone";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
+import * as amplitude from '@amplitude/analytics-browser';
+import { Button } from "@mui/material";
+
+// Replace with your Amplitude API key
+amplitude.init('43142b96c98980996dd8ee88fedf3982');
+
+amplitude.identify('info@easywayeurope.com');
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <>
@@ -16,7 +23,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         wireframe={false}
         shader="defaults"
         uTime={8}
-        uSpeed={0.7}
+        uSpeed={0.3}
         uStrength={1.5}
         uDensity={1.5}
         uFrequency={0}
@@ -55,6 +62,16 @@ createRoot(document.getElementById("app") as HTMLElement).render(
     </ShaderGradientCanvas>
     <div style={{ position: 'relative', zIndex: 1 }}>
       <Iphone />
+      <Button
+        onClick={() => {
+          amplitude.track('Contact Button Clicked', { method: 'Telegram' });
+          // ...your existing logic
+        }}
+      >
+        Chat via Telegram
+      </Button>
     </div>
   </>,
 );
+
+amplitude.track('Button Clicked', { buttonName: 'Telegram' });
