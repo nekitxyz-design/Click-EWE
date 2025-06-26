@@ -23,14 +23,6 @@ export const Iphone = (): JSX.Element => {
       fallbackColor: "text-green-500",
     },
     {
-      name: "Chat via Viber",
-      icon: "./viber.svg",
-      bgColor: "bg-[#f0dafd82]",
-      id: "viber",
-      fallbackIcon: MessageCircle,
-      fallbackColor: "text-purple-500",
-    },
-    {
       name: "Visit Instagram",
       icon: "./inst.svg",
       bgColor: "bg-[#fddadb82]",
@@ -60,7 +52,7 @@ export const Iphone = (): JSX.Element => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center w-full p-4" style={{ position: 'relative', zIndex: 1 }}>
-      <div className="w-full max-w-[393px] min-h-[760px] max-h-[850px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
+      <div className="w-full max-w-[393px] min-h-[690px] max-h-[850px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
         {/* Background pattern overlay (absolute под контентом) */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 z-0"></div>
         <div className="flex flex-col w-full max-w-[325px] items-start gap-4 relative top-[57px] left-1/2 transform -translate-x-1/2 px-4 z-10">
