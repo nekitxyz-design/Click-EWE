@@ -54,12 +54,11 @@ export const Iphone = (): JSX.Element => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-row justify-center w-full p-4">
-      <div className="w-full max-w-[393px] min-h-[752px] bg-white rounded-3xl shadow-2xl overflow-hidden relative">
-        {/* Background pattern overlay (теперь только по контенту) */}
-        <div className="relative w-full h-full bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
-        
-        <div className="flex flex-col w-full max-w-[325px] items-start gap-4 relative top-[57px] left-1/2 transform -translate-x-1/2 px-4">
+    <div className="min-h-screen flex items-center justify-center w-full p-4" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="w-full max-w-[393px] min-h-[760px] max-h-[850px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
+        {/* Background pattern overlay (absolute под контентом) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 z-0"></div>
+        <div className="flex flex-col w-full max-w-[325px] items-start gap-4 relative top-[57px] left-1/2 transform -translate-x-1/2 px-4 z-10">
           {/* Logo - Clean SVG without card wrapper */}
           <div className="w-[138px] h-[138px] rounded-[2px]">
             <img
@@ -157,12 +156,11 @@ export const Iphone = (): JSX.Element => {
               </Button>
             );
           })}
-
-          {/* Footer */}
-          <p className="self-stretch font-normal text-gray-600 text-sm tracking-[-0.14px] leading-normal font-['Roboto',Helvetica] mt-4">
-            All rights reserved. © easywayeurope.com 2017.
-          </p>
         </div>
+        {/* Footer всегда внизу карточки */}
+        <p className="w-full text-center font-normal text-gray-600 text-sm tracking-[-0.14px] leading-normal font-['Roboto',Helvetica] mb-4 z-10">
+          All rights reserved. © easywayeurope.com 2017.
+        </p>
       </div>
     </div>
   );
