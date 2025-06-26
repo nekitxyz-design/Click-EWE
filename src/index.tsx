@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { Iphone } from "./screens/Iphone";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
+
 createRoot(document.getElementById("app") as HTMLElement).render(
   <>
     <ShaderGradientCanvas
@@ -53,16 +54,6 @@ createRoot(document.getElementById("app") as HTMLElement).render(
     </ShaderGradientCanvas>
     <div style={{ position: 'relative', zIndex: 1 }}>
       <Iphone />
-      <Button
-        onClick={() => {
-          amplitude.track('Contact Button Clicked', { method: 'Telegram' });
-          // ...your existing logic
-        }}
-      >
-        Chat via Telegram
-      </Button>
     </div>
-  </>,
+  </>
 );
-
-amplitude.track('Button Clicked', { buttonName: 'Telegram' });
