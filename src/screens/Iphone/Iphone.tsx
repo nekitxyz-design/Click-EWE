@@ -54,7 +54,7 @@ export const Iphone = (): JSX.Element => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center w-full p-4" style={{ position: 'relative', zIndex: 1 }}>
+    <div className="min-h-screen flex flex-col items-center justify-center w-full p-4" style={{ position: 'relative', zIndex: 1 }}>
       <div className="w-full max-w-[393px] min-h-[760px] max-h-[850px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
         {/* Background pattern overlay (absolute под контентом) */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 z-0"></div>
@@ -157,11 +157,13 @@ export const Iphone = (): JSX.Element => {
             );
           })}
         </div>
-        {/* Footer всегда внизу карточки */}
-        <p className="w-full text-center font-normal text-gray-600 text-sm tracking-[-0.14px] leading-normal font-['Roboto',Helvetica] mb-4 z-10">
+      </div>
+      {/* Футер под карточкой, с отступом сверху */}
+      <footer className="w-full flex justify-center mt-6 mb-4">
+        <p className="bg-white/80 rounded px-4 py-2 text-center font-normal text-gray-600 text-sm tracking-[-0.14px] leading-normal font-['Roboto',Helvetica] shadow-md max-w-[360px] w-[90vw]">
           All rights reserved. © easywayeurope.com 2017.
         </p>
-      </div>
+      </footer>
     </div>
   );
 };
