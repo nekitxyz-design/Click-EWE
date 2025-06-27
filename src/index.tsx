@@ -15,7 +15,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         wireframe={false}
         shader="defaults"
         uTime={8}
-        uSpeed={0.25}
+        uSpeed={0.16}
         uStrength={1.5}
         uDensity={1.5}
         uFrequency={0}
