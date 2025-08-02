@@ -9,6 +9,10 @@ const isGH = process.env.DEPLOY_ENV === 'GH_PAGES';
 export default defineConfig({
   plugins: [react()],
   base: isGH ? '/Click-EWE/' : '/',
+  server: {
+    port: 3000,
+    host: true,
+  },
   css: {
     postcss: {
       plugins: [tailwind()],

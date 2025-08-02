@@ -7,6 +7,14 @@ export const Iphone = (): JSX.Element => {
   // Contact options data for mapping with fallback icons
   const contactOptions = [
     {
+      name: "Open Website",
+      icon: "./website.svg",
+      bgColor: "bg-[#000000]",
+      id: "website",
+      fallbackIcon: MessageCircle,
+      fallbackColor: "text-blue-500",
+    },
+    {
       name: "Chat via Telegram",
       icon: "./tg.svg",
       bgColor: "bg-[#a3e6fc82]",
@@ -52,11 +60,9 @@ export const Iphone = (): JSX.Element => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center w-full p-4" style={{ position: 'relative', zIndex: 1 }}>
-      <div className="w-full max-w-[393px] min-h-[690px] max-h-[850px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
-        {/* Background pattern overlay (absolute под контентом) */}
+      <div className="w-full max-w-[393px] min-h-[740px] max-h-[1200px] bg-white rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 z-0"></div>
         <div className="flex flex-col w-full max-w-[325px] items-start gap-4 relative top-[57px] left-1/2 transform -translate-x-1/2 px-4 z-10">
-          {/* Logo - Clean SVG without card wrapper */}
           <div className="w-[138px] h-[138px] rounded-[2px]">
             <img
               className="w-full h-full object-contain"
@@ -93,6 +99,8 @@ export const Iphone = (): JSX.Element => {
               link = "https://www.instagram.com/easywayeurope/";
             } else if (option.name === "Chat via Telegram") {
               link = "https://t.me/EWE_Chat";
+            } else if (option.name === "Open Website") {
+              link = "https://easywayeurope.com/";
             }
             const buttonContent = (
               <>
@@ -123,7 +131,7 @@ export const Iphone = (): JSX.Element => {
                     </>
                   )}
                 </div>
-                <span className="flex-1 font-medium text-gray-900 text-[22px] tracking-[-0.22px] leading-normal font-['Roboto',Helvetica] text-left">
+                <span className={`flex-1 font-medium text-[22px] tracking-[-0.22px] leading-normal font-['Roboto',Helvetica] text-left ${option.bgColor === "bg-[#000000]" ? "text-white" : "text-gray-900"}`}>
                   {option.name}
                 </span>
               </>
@@ -160,7 +168,7 @@ export const Iphone = (): JSX.Element => {
       {/* Футер под карточкой, с отступом сверху */}
       <footer className="w-full flex justify-center mt-6 mb-4">
         <p className="bg-white/80 rounded px-4 py-2 text-center font-normal text-gray-600 text-sm tracking-[-0.14px] leading-normal font-['Roboto',Helvetica] shadow-md max-w-[360px] w-[90vw]">
-          All rights reserved. © easywayeurope.com 2017.
+          All rights reserved. © easywayeurope.com 2020-2025.
         </p>
       </footer>
     </div>
